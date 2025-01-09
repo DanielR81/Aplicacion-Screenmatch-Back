@@ -33,6 +33,7 @@ public class Episodio {
         }catch (NumberFormatException e){
             this.evaluacion = 0.0;
         }
+
         try{
             this.fechaDeLanzamiento = LocalDate.parse(d.fechaDeLanzamiento());
         } catch (DateTimeParseException e){

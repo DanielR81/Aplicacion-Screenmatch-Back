@@ -111,6 +111,7 @@ public class Principal {
                 DatosTemporadas datosTemporada = conversor.obtenerDatos(json, DatosTemporadas.class);
                 temporadas.add(datosTemporada);
             }
+
             temporadas.forEach(System.out::println);
 
             List<Episodio> episodios = temporadas.stream()
@@ -168,7 +169,7 @@ public class Principal {
 
     private void  buscarTop3Series(){
 
-        List<Serie> topSeries = repositorio.findTop3ByOrderByEvaluacionDesc();
+        List<Serie> topSeries = repositorio.findTop5ByOrderByEvaluacionDesc();
         topSeries.forEach(s ->
                 System.out.println("Serie: " + s.getTitulo() + "Evaluacion: " + s.getEvaluacion()));
 
